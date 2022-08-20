@@ -1,9 +1,9 @@
 import React from 'react'
 import  { useState } from 'react';
 import Menu from '../../SubjectsMenu'
-function Geometry() {
+function Algebra() {
 
-const options=['Circles','Triangles','Quadrilaterals','Similarity','Transformation'];
+
         const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -24,7 +24,7 @@ const options=['Circles','Triangles','Quadrilaterals','Similarity','Transformati
 			],
 		},
 		{
-			questionText: 'The iPhone is created by ?',
+			questionText: 'The iPhone was created by which company?',
 			answerOptions: [
 				{ answerText: 'Apple', isCorrect: true },
 				{ answerText: 'Intel', isCorrect: false },
@@ -59,60 +59,45 @@ const options=['Circles','Triangles','Quadrilaterals','Similarity','Transformati
    
 
  
-		const nextQuestion = currentQuestion + 1;
-		if (nextQuestion < questions.length) {
-			setCurrentQuestion(nextQuestion);
-		} else {
-			setShowScore(true);
-		}
+	// 	const nextQuestion = currentQuestion + 1;
+	// 	if (nextQuestion < questions.length) {
+	// 		setCurrentQuestion(nextQuestion);
+	// 	} else {
+	// 		setShowScore(true);
+	// 	}
 	};
 	return (
-            <div className=' flex flex-col sm:flex-col md:flex-row '>
-             <div className='flex flex-row'> <Menu/></div>
-				
-				
-					<div className='flex flex-col '>
-				<span className=' mt-20 flex flex-row   h-12'>Topics:
-                       
-			{
-                            options.map((n, i) =>
-							
-                                <div key={i} className='p-2 m-2'>
-                            
-                                    <button className={" text-md text-blue-800 hover:text-red-600 hover:underline"}>{n}</button>
-                                </div>
-                            )
-                        }
-                    </span>
-					<hr></hr>
-		<div className=' flex flex-col w-[800px] h-full mt-12 border-2 border-blue-50'>
+            <div className='flex flex-row '>
+                <div ><Menu/></div>
+              
+		<div className='w-[800px] h-full mt-12 border-2 border-blue-50'>
 			{showScore ? (
-				<div className='flex text-red-600 m-36 '>
+				<div className='score-section'>
 					You scored {score} out of {questions.length}
 				</div>
 			) : (
 				<>
-				<p className='underline  sm:text-sm lg:text-lg'>Answer These Questions </p> <p className='float-left underline  sm:text-sm lg:text-lg'>*Your Current Score={score} </p>
+               
 					<div className='question-section'>
-						<div className='text-md md:text-xl mb-2 '>
+						<div className='question-count'>
+                            
 							<span>Question {currentQuestion + 1}</span>/{questions.length}
 						</div>
-						<p className=' text-sm text-justify justify-center sm: text-xl md:text-xl lg:text-3xl text-green-900  ' ><b>{questions[currentQuestion].questionText}</b></p>
+						<div >{questions[currentQuestion].questionText}</div>
 					</div>
-					
-
 					<div className='answer-section' >
-					
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							
-							<button className=' text-md w-full flex rounded-10 p-3 justify-start items-center cursor-pointer border-2 border-yellow-200 hover:bg-yellow-500' onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText} </button>
+							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText} </button>
 						))}
 					</div>
 				</>
 			)}
-		</div></div>
+		</div>
 		</div>
 
 	);
 }
-export default Geometry
+       
+   
+
+export default Algebra
