@@ -23,13 +23,13 @@ function Menu() {
         setOpenpupil(false);
         setOpenresearch(false);
     }
-    const handlehome = () => {
-        setOpenhome(!openhome);
-        setOpenabout(false);
-        setOpenacad(false);
-        setOpenpupil(false);
-        setOpenresearch(false);
-    }
+    // const handlehome = () => {
+    //     setOpenhome(!openhome);
+    //     setOpenabout(false);
+    //     setOpenacad(false);
+    //     setOpenpupil(false);
+    //     setOpenresearch(false);
+    // }
     const handlepupil = () => {
         setOpenhome(false);
         setOpenabout(false);

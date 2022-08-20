@@ -1,9 +1,11 @@
 import React from 'react'
 import  { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Menu from '../../SubjectsMenu'
 function Geometry() {
 
-const options=['Circles','Triangles','Quadrilaterals','Similarity','Transformation'];
+// const options=['Circles','Triangles','Quadrilaterals','Similarity','Transformation'];
+let navigate=useNavigate();
         const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -74,17 +76,20 @@ const options=['Circles','Triangles','Quadrilaterals','Similarity','Transformati
 					<div className='flex flex-col '>
 				<span className=' mt-20 flex flex-row   h-12'>Topics:
                        
-			{
-                            options.map((n, i) =>
+	
 							
-                                <div key={i} className='p-2 m-2'>
+                                <div className='p-2 m-2'>
                             
-                                    <button className={" text-md text-blue-800 hover:text-red-600 hover:underline"}>{n}</button>
+                                    <button  className={"bg-green-600 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-green-700 hover:text-base focus:ring-4 focus:ring-green-300 " }onClick={() => {  navigate("/Circles") }}>Circles</button>
+                                    <button  className={" bg-green-600 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-green-700 hover:text-base focus:ring-4 focus:ring-green-300 mx-5 " }>Triangles</button>
+                                    <button  className={"bg-green-600 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-green-700 hover:text-base focus:ring-4 focus:ring-green-300 mx-5" }>Quadrilaterals</button>
+                                    <button  className={" bg-green-600 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-green-700 hover:text-base focus:ring-4 focus:ring-green-300 mx-5" }>Similarity</button>
+
+
                                 </div>
-                            )
-                        }
+                          
                     </span>
-					<hr></hr>
+				
 		<div className=' flex flex-col w-[800px] h-full mt-12 border-2 border-blue-50'>
 			{showScore ? (
 				<div className='flex text-red-600 m-36 '>
