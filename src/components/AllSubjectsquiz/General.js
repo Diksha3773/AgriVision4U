@@ -1,9 +1,10 @@
 import React from 'react'
 import  { useState } from 'react';
-import Menu from '../../SubjectsMenu'
-function Algebra() {
-
-
+import { useNavigate } from 'react-router-dom';
+// import Menu from '../../SubjectsMenu'
+import Menu from '../SubjectsMenu';
+function General() {
+let navigate=useNavigate();
         const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -24,7 +25,7 @@ function Algebra() {
 			],
 		},
 		{
-			questionText: 'The iPhone was created by which company?',
+			questionText: 'The iPhone is created by ?',
 			answerOptions: [
 				{ answerText: 'Apple', isCorrect: true },
 				{ answerText: 'Intel', isCorrect: false },
@@ -59,45 +60,49 @@ function Algebra() {
    
 
  
-	// 	const nextQuestion = currentQuestion + 1;
-	// 	if (nextQuestion < questions.length) {
-	// 		setCurrentQuestion(nextQuestion);
-	// 	} else {
-	// 		setShowScore(true);
-	// 	}
+		const nextQuestion = currentQuestion + 1;
+		if (nextQuestion < questions.length) {
+			setCurrentQuestion(nextQuestion);
+		} else {
+			setShowScore(true);
+		}
 	};
 	return (
-            <div className='flex flex-row '>
-                <div ><Menu/></div>
-              
-		<div className='w-[800px] h-full mt-12 border-2 border-blue-50'>
+            <div className=' flex flex-col sm:flex-col md:flex-row '>
+             <div className='flex flex-row'> <Menu/></div>
+				
+				
+					<div className='flex flex-col '>
+                        
+		<div className=' flex flex-col w-[800px] h-full mt-12 border-2 border-blue-50'>
 			{showScore ? (
-				<div className='score-section'>
+				<div className='flex text-red-600 m-36 '>
 					You scored {score} out of {questions.length}
 				</div>
 			) : (
 				<>
-               
+                <h1 className='text-center'><strong>Test your General knowledge</strong></h1>
+				<p className='underline  sm:text-sm lg:text-lg'>Answer These Questions </p> <p className='float-left underline  sm:text-sm lg:text-lg'>*Your Current Score={score} </p>
 					<div className='question-section'>
-						<div className='question-count'>
-                            
+						<div className='text-md md:text-xl mb-2 '>
 							<span>Question {currentQuestion + 1}</span>/{questions.length}
 						</div>
-						<div >{questions[currentQuestion].questionText}</div>
+						<p className=' text-sm text-justify justify-center sm: text-xl md:text-xl lg:text-3xl text-green-900  ' ><b>{questions[currentQuestion].questionText}</b></p>
 					</div>
+					
+
 					<div className='answer-section' >
+					
 						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText} </button>
+							
+							<button className=' text-md w-full flex rounded-10 p-3 justify-start items-center cursor-pointer border-2 border-yellow-200 hover:bg-yellow-500' onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText} </button>
 						))}
 					</div>
 				</>
 			)}
-		</div>
+		</div></div>
 		</div>
 
 	);
 }
-       
-   
-
-export default Algebra
+export default General

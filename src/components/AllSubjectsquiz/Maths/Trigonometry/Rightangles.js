@@ -1,46 +1,39 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Menu from '../../SubjectsMenu'
-function Circles() {
+import Menu from '../../../SubjectsMenu';
+function Rightangles() {
     let navigate = useNavigate();
     const questions = [
         {
-            questionText: 'Number of tangents drawn at a point of the , circle is/are',
+            questionText: ' If a pair of linear equations is consistent, then the lines are:',
             answerOptions: [
-                { answerText: 'One', isCorrect: true },
+                { answerText: ' Always intersecting', isCorrect: false },
+                { answerText: 'Always intersecting', isCorrect: true },
+                { answerText: 'Always coincident', isCorrect: false },
+                { answerText: 'Intersecting or coincident', isCorrect: false },
+            ],
+        },
+        {
+            questionText: 'The pairs of equations x+2y-5 = 0 and -4x-8y+20=0 have:',
+            answerOptions: [
+                { answerText: ' Infinitely many solutions', isCorrect: true },
                 { answerText: 'Two', isCorrect: false },
                 { answerText: 'None', isCorrect: false },
-                { answerText: 'Infinite', isCorrect: false },
+                { answerText: 'Unique solution', isCorrect: false },
             ],
         },
+       
         {
-            questionText: 'Who is CEO of Tesla?',
+            questionText: ' If one equation of a pair of dependent linear equations is -3x+5y-2=0. The second equation will be:',
             answerOptions: [
-                { answerText: 'Jeff Bezos', isCorrect: false },
-                { answerText: 'Elon Musk', isCorrect: true },
-                { answerText: 'Bill Gates', isCorrect: false },
-                { answerText: 'Tony Stark', isCorrect: false },
+                { answerText: '-6x+10y-4=0', isCorrect: true },
+                { answerText: '6x-10y-4=0', isCorrect: false },
+                { answerText: ' -6x+10y+4=0', isCorrect: false },
+                { answerText: ' -6x+10y+4=0', isCorrect: false },
             ],
         },
-        {
-            questionText: 'The iPhone is created by ?',
-            answerOptions: [
-                { answerText: 'Apple', isCorrect: true },
-                { answerText: 'Intel', isCorrect: false },
-                { answerText: 'Amazon', isCorrect: false },
-                { answerText: 'Microsoft', isCorrect: false },
-            ],
-        },
-        {
-            questionText: 'How many Harry Potter books are there?',
-            answerOptions: [
-                { answerText: '1', isCorrect: false },
-                { answerText: '4', isCorrect: false },
-                { answerText: '6', isCorrect: false },
-                { answerText: '7', isCorrect: true },
-            ],
-        },
+       
     ];
 
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -73,9 +66,10 @@ function Circles() {
                 <span className=' mt-20 flex flex-row   h-12'><b>Topics:</b>
                     <div  >
 
-                        <button className={"bg-blue-400 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mb-3 "} onClick={() => { navigate("/Circles") }}>Circles</button>
-                        <button className={" bg-blue-400 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mx-3  "}onClick={() => { navigate("/Triangles") }}>Triangles</button>
-                        
+                    <button className={"bg-blue-400 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mb-3 "} onClick={() => { navigate("/Pythagoras") }}>Pythagoras Theorem</button>
+                        <button className={" bg-blue-400 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mx-3  "}onClick={() => { navigate("/Rightangles") }}>Right angled Triangle</button>
+                       
+                       
 
 
                     </div>
@@ -117,4 +111,4 @@ function Circles() {
 
     );
 }
-export default Circles
+export default Rightangles

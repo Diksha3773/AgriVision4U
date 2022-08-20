@@ -18,7 +18,7 @@ function Subjectcarousel() {
           }
         }, 50)
       }
-    let navigate = useNavigate();
+   
     return (
         <>
             <div className='flex flex-col justify-center rounded items-center w-full sm:w-[98%] px-auto text-center my-8'>

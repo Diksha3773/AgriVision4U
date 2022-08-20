@@ -67,7 +67,7 @@ function Subjects({search}) {
                 list.map((item, i) => {
                     return  ( 
                         <div  key={i} role="listitem" className="min-w-[260px] max-w-[400px] relative mt-32 mx-2">
-                           <div className="rounded border-2 overflow-hidden shadow-md bg-white " onClick={() => { navigate("/Questions")}}>
+                           <div className="rounded border-2 overflow-hidden shadow-md bg-white " onClick={() => { navigate("/General")}}>
                            <div className="  absolute -mt-20 w-full flex justify-center  h-36">
                            <img src={item.imgurl} alt="Display Picture of Charles Keith" role="img" className=" object-cover h-full w-full shadow-md" />
                            </div>

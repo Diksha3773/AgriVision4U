@@ -5,20 +5,6 @@ function Questionpage() {
     <div>
     <Menu/>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     
     </div>
   )

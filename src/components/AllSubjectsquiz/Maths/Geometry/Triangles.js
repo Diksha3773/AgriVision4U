@@ -1,26 +1,26 @@
 import React from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Menu from '../../SubjectsMenu'
-function Circles() {
+import Menu from '../../../SubjectsMenu';
+function Triangles() {
     let navigate = useNavigate();
     const questions = [
         {
-            questionText: 'Number of tangents drawn at a point of the , circle is/are',
+            questionText: 'Which of the following triangles have the same side lengths?',
             answerOptions: [
-                { answerText: 'One', isCorrect: true },
-                { answerText: 'Two', isCorrect: false },
+                { answerText: 'Equilateral', isCorrect: true },
+                { answerText: 'Scalene', isCorrect: false },
                 { answerText: 'None', isCorrect: false },
-                { answerText: 'Infinite', isCorrect: false },
+                { answerText: 'Isosceles', isCorrect: false },
             ],
         },
         {
-            questionText: 'Who is CEO of Tesla?',
+            questionText: ' The diagonals of a rhombus are 16 cm and 12 cm, in length. The side of rhombus in length is',
             answerOptions: [
-                { answerText: 'Jeff Bezos', isCorrect: false },
-                { answerText: 'Elon Musk', isCorrect: true },
-                { answerText: 'Bill Gates', isCorrect: false },
-                { answerText: 'Tony Stark', isCorrect: false },
+                { answerText: '30 cm', isCorrect: false },
+                { answerText: '10 cm', isCorrect: true },
+                { answerText: '5 cm', isCorrect: false },
+                { answerText: '20cm', isCorrect: false },
             ],
         },
         {
@@ -33,12 +33,12 @@ function Circles() {
             ],
         },
         {
-            questionText: 'How many Harry Potter books are there?',
+            questionText: 'The height of an equilateral triangle of side 5 cm is:',
             answerOptions: [
                 { answerText: '1', isCorrect: false },
                 { answerText: '4', isCorrect: false },
                 { answerText: '6', isCorrect: false },
-                { answerText: '7', isCorrect: true },
+                { answerText: ' 4.33 ', isCorrect: true },
             ],
         },
     ];
@@ -74,8 +74,8 @@ function Circles() {
                     <div  >
 
                         <button className={"bg-blue-400 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mb-3 "} onClick={() => { navigate("/Circles") }}>Circles</button>
-                        <button className={" bg-blue-400 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mx-3  "}onClick={() => { navigate("/Triangles") }}>Triangles</button>
-                        
+                        <button className={" bg-blue-400 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mx-3  "}>Triangles</button>
+                       
 
 
                     </div>
@@ -117,4 +117,4 @@ function Circles() {
 
     );
 }
-export default Circles
+export default Triangles
