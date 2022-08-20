@@ -4,8 +4,6 @@ function Questionpage() {
   return (
     <div>
     <Menu/>
-
-    
     </div>
   )
 }

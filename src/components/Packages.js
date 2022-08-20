@@ -24,7 +24,7 @@ function Packages() {
     }, [value])
     return (
         <>
-            <div  className="m-10 w-52 lg:m-48 rounded-xl md: h-[30vw] md:h-[78vh]  max-h-[800px] transition-all duration-75 bg-cover bg-center" style={divStyle}>
+            <div  className="m-10  lg:m-48 rounded-xl md: h-[30vw] md:h-[78vh]  max-h-[800px] transition-all duration-75 bg-cover bg-center" style={divStyle}>
                 <div className="bg-gradient-to-b from-accent to-transparent h-full w-full">
                     <div className="flex flex-col items-center justify-center container" style={{ height: "100%" }}>
                         <div className="flex flex-col gap-10">
