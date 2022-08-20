@@ -1,12 +1,11 @@
 import React from 'react'
-import  { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import Menu from '../../SubjectsMenu'
 import Menu from '../SubjectsMenu';
 function General() {
-let navigate=useNavigate();
-        const questions = [
-		{
+    let navigate = useNavigate();
+    const questions = [
+        {
 			questionText: 'What is the capital of France?',
 			answerOptions: [
 				{ answerText: 'New York', isCorrect: false },
@@ -43,66 +42,71 @@ let navigate=useNavigate();
 			],
 		},
 	];
+       
 
-	const [currentQuestion, setCurrentQuestion] = useState(0);
-	const [showScore, setShowScore] = useState(false);
-	const [score, setScore] = useState(0);
 
-	const handleAnswerOptionClick = (isCorrect) => {
-        
-		if (isCorrect) {
-            alert('Correct answer ')  
-			setScore(score + 1);
-		}
-        else{
-    alert('incorrect answer')}
-   
-   
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [showScore, setShowScore] = useState(false);
+    const [score, setScore] = useState(0);
 
- 
-		const nextQuestion = currentQuestion + 1;
-		if (nextQuestion < questions.length) {
-			setCurrentQuestion(nextQuestion);
-		} else {
-			setShowScore(true);
-		}
-	};
-	return (
-            <div className=' flex flex-col sm:flex-col md:flex-row '>
-             <div className='flex flex-row'> <Menu/></div>
-				
-				
-					<div className='flex flex-col '>
-                        
-		<div className=' flex flex-col w-[800px] h-full mt-12 border-2 border-blue-50'>
-			{showScore ? (
-				<div className='flex text-red-600 m-36 '>
-					You scored {score} out of {questions.length}
-				</div>
-			) : (
-				<>
-                <h1 className='text-center'><strong>Test your General knowledge</strong></h1>
-				<p className='underline  sm:text-sm lg:text-lg'>Answer These Questions </p> <p className='float-left underline  sm:text-sm lg:text-lg'>*Your Current Score={score} </p>
-					<div className='question-section'>
-						<div className='text-md md:text-xl mb-2 '>
-							<span>Question {currentQuestion + 1}</span>/{questions.length}
-						</div>
-						<p className=' text-sm text-justify justify-center sm: text-xl md:text-xl lg:text-3xl text-green-900  ' ><b>{questions[currentQuestion].questionText}</b></p>
-					</div>
-					
+    const handleAnswerOptionClick = (isCorrect) => {
 
-					<div className='answer-section' >
-					
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							
-							<button className=' text-md w-full flex rounded-10 p-3 justify-start items-center cursor-pointer border-2 border-yellow-200 hover:bg-yellow-500' onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText} </button>
-						))}
-					</div>
-				</>
-			)}
-		</div></div>
-		</div>
+        if (isCorrect) {
+            alert('Correct answer ')
+            setScore(score + 1);
+        }
+        else {
+            alert('incorrect answer')
+        }
 
-	);
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < questions.length) {
+            setCurrentQuestion(nextQuestion);
+        } else {
+            setShowScore(true);
+        }
+    };
+    return (
+        <div className=' flex flex-col sm:flex-col md:flex-row '>
+            <div className='flex flex-row'> <Menu /></div>
+
+
+            <div className='flex flex-col '>
+               
+
+                <div className=' flex flex-col p-10 mt-36 w-full h-full sm:mt-20 lg:mt-12  '>
+                    {showScore ? (
+                        <div className='flex text-red-600 m-36 '>
+                            <b>You scored {score} out of {questions.length}</b>
+                            <div className='mt-20 '><button className='text-blue-800 underline' onClick={() => { navigate("/Circles") }} >Restart </button></div>
+                        </div>
+
+                    ) : (
+                        <>
+                            <p className='underline  text-center'>Answer These Questions </p> <p className='text-center'>*Your Current Score={score} </p>
+                            <div >
+                                <div className='text-md md:text-xl mb-2 '>
+                                    <span>Question {currentQuestion + 1}</span>/{questions.length}
+                                </div>
+                                <p className=' text-sm text-justify justify-center sm: text-xl md:text-xl lg:text-3xl text-green-900  ' ><b>{questions[currentQuestion].questionText}</b></p>
+                            </div>
+
+
+                            <div className='answer-section' >
+
+                                {questions[currentQuestion].answerOptions.map((answerOption) => (
+
+                                    <button className=' text-md w-full flex rounded-10 p-3 justify-start items-center cursor-pointer border-b-2  border-yellow-100 hover:bg-yellow-500' onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText} </button>
+                                ))}
+                            </div>
+                        <button className={" w-36 bg-blue-600 text-lg shadow-md   p-2 m-0  text-white rounded-lg hover:bg-orange-600 hover:text-base focus:ring-4 focus:ring-red-300 mb-3 "} >Save for later</button>
+
+
+                        </>
+                    )}
+                </div></div>
+        </div>
+
+    );
 }
 export default General
